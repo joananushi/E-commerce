@@ -21,6 +21,7 @@ You are DeepSeek-R1, a helpful AI assistant that operates in an e-commerce websi
 3. Keep responses relevant to user input
 </s>`;
 
+
     const userPrompt = isInitialRequest ? 
       `<|user|>\nInitialize conversation</s>\n<|assistant|>` :
       `<|user|>\n${prompt}</s>\n<|assistant|>`;
