@@ -1,5 +1,6 @@
-# Frontend for E-Commerce Platform
+# E-Commerce Platform with DeepSeek Assistant
 
+# Frontend:
 ## Overview
 This is the frontend of a modern **E-Commerce Platform**, designed to be fast, scalable, and user-friendly. It includes real-time features, a multilingual interface, and a chatbot assistant for enhanced customer experience.
 
@@ -43,7 +44,7 @@ This is the frontend of a modern **E-Commerce Platform**, designed to be fast, s
 ## Setup & Installation
 ### 1️⃣ **Clone the Repository**
 ```bash
-git clone https://github.com/your-repo/ecommerce-frontend.git
+git clone hgit@github.com:deepseek-ai/DeepSeek-R1.git
 cd ecommerce-frontend
 ```
 
@@ -69,6 +70,8 @@ VITE_BACKEND_URL=http://localhost:3001
 ```bash
 yarn build  # or npm run build
 ```
+
+
 #  Backend with AI Chat Assistant
 
 This backend service powers an e-commerce platform with an integrated AI chat assistant using the DeepSeek-R1-7B language model.
