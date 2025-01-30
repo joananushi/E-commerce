@@ -139,6 +139,7 @@ body {
 }
 
 /* Cart Modal Styling */
+// Desktop style
 .cart-container {
   padding: 20px;
 
@@ -240,7 +241,6 @@ body {
   }
 }
 
-
 // Landing Component
 
 .landing-page {
@@ -319,43 +319,35 @@ body {
 }
 
 // Chat
-.chat-container {
-  width: 400px;
-  max-width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
+.chat-fullscreen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f8f9fa;
 }
 
 .chat-header {
+  padding: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
   background-color: #007bff;
   color: white;
-  font-weight: bold;
   text-align: center;
-  padding: 15px;
-  font-size: 1.2rem;
 }
 
 .chat-body {
-  height: 350px;
+  flex-grow: 1;
   overflow-y: auto;
-  padding: 15px;
-  background-color: #f8f9fa;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.messages {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .message {
-  max-width: 75%;
   padding: 10px 15px;
   border-radius: 20px;
-  font-size: 14px;
+  max-width: 75%;
   word-wrap: break-word;
 }
 
@@ -363,20 +355,45 @@ body {
   align-self: flex-end;
   background-color: #007bff;
   color: white;
-  text-align: right;
-  border-bottom-right-radius: 5px;
 }
 
 .bot {
   align-self: flex-start;
   background-color: #e9ecef;
-  color: black;
-  border-bottom-left-radius: 5px;
+  color: #333;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 5px;
+  span {
+    width: 8px;
+    height: 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    animation: blink 1.4s infinite;
+  }
+  span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
 .chat-footer {
   padding: 10px;
-  background: white;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .chat-input {
@@ -385,14 +402,7 @@ body {
 }
 
 .send-button {
-  border-radius: 50%;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-}
-
-.send-button:hover {
-  background-color: #0056b3 !important;
+  margin-left: 10px;
+  border-radius: 20px;
+  padding: 10px 15px;
 }

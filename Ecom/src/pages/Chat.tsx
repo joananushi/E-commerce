@@ -61,50 +61,40 @@ const Chat = () => {
       setIsLoading(false);
     }
   };
-
   return (
-    <Container className="d-flex justify-content-center align-items-center vh-100">
-      <Card className="chat-container shadow-lg">
-        <Card.Header className="chat-header">Chat Assistant</Card.Header>
-        <Card.Body className="chat-body">
-          <div className="messages">
-            {messages.map((msg, i) => (
-              <div key={i} className={`message ${msg.isUser ? "user" : "bot"}`}>
-                {msg.text}
-              </div>
-            ))}
-            {isLoading && (
-              <div className="message bot">
-                <div className="typing-indicator">
-                  <span></span><span></span><span></span>
-                </div>
-              </div>
-            )}
+    <Container fluid className="chat-fullscreen">
+      <div className="chat-header">Chat Assistant</div>
+      <div className="chat-body">
+        {messages.map((msg, i) => (
+          <div key={i} className={`message ${msg.isUser ? "user" : "bot"}`}>
+            {msg.text}
           </div>
-        </Card.Body>
-        <Card.Footer className="chat-footer">
-          <Form onSubmit={handleSubmit} className="d-flex">
-            <InputGroup>
-              <Form.Control
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Type a message..."
-                className="chat-input"
-                disabled={isLoading}
-              />
-              <Button 
-                variant="primary" 
-                type="submit" 
-                className="send-button"
-                disabled={isLoading}
-              >
-                {isLoading ? 'Sending...' : 'Send'}
-              </Button>
-            </InputGroup>
-          </Form>
-        </Card.Footer>
-      </Card>
+        ))}
+        {isLoading && (
+          <div className="message bot">
+            <div className="typing-indicator">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="chat-footer">
+        <Form onSubmit={handleSubmit} className="d-flex w-100">
+          <InputGroup className="input-group">
+            <Form.Control
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Type a message..."
+              className="chat-input"
+              disabled={isLoading}
+            />
+            <Button variant="primary" type="submit" className="send-button" disabled={isLoading}>
+              {isLoading ? "Sending..." : "Send"}
+            </Button>
+          </InputGroup>
+        </Form>
+      </div>
     </Container>
   );
 };
